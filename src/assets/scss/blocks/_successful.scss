@@ -1,0 +1,46 @@
+.successful {
+    & .container {
+        &>.flex-row {
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 35px;
+
+            & .flex-column {
+                max-width: 507px;
+                gap: 48px;
+            }
+        }
+
+        & .project_title {
+            max-width: 778px;
+        }
+
+
+    }
+
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 24px;
+
+        & .successful_item {
+            border-radius: 20px;
+            padding: 32px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+
+            & .flex-row{
+                justify-content: space-between;
+            }
+
+            & .project_title_h4{
+                font-size: 26px;
+            }
+
+            & .project_desc_grey{
+                font-size: 14px;
+            }
+        }
+    }
+}
