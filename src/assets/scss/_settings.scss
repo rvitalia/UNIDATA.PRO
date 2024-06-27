@@ -103,7 +103,7 @@ a {
 .project_title {
   margin: 0;
   font-weight: 600;
-  font-size: 60px;
+  font-size: clamp(34px, 4.5vw, 60px);
   line-height: 130%;
   letter-spacing: -0.03em;
   color: var(--accent-color);
@@ -115,6 +115,10 @@ a {
   font-size: 24px;
   line-height: 140%;
   letter-spacing: -0.03em;
+
+  @include small-tablet{
+    font-size: 20px;
+  }
 }
 
 .project_title_h3 {
@@ -123,6 +127,10 @@ a {
   font-size: 36px;
   line-height: 140%;
   color: #fff;
+
+  @include small-tablet{
+    font-size: 30px;
+  }
 }
 
 .project_text_regular {
@@ -130,6 +138,10 @@ a {
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
+
+  @include small-tablet{
+    font-size: 14px;
+  }
 }
 
 .project_desc_grey {
@@ -138,6 +150,10 @@ a {
   font-size: 16px;
   line-height: 180%;
   color: #878c91;
+
+  @include tablet{
+    font-size: 14px;
+  }
 }
 
 .project_desc_main {
@@ -163,9 +179,14 @@ a {
   transition: all 0.3s linear;
   border: 1px solid transparent;
 
-  @include small-tablet{
+  @include tablet{
     padding: 12px 20px;
     font-size: 14px;
+  }
+
+  @include mobile{
+    padding: 8px 14px;
+    font-size: 12px;
   }
 
   & svg{
@@ -187,6 +208,11 @@ a {
     color: #101838;
     background-color: white;
     border-color: var(--accent-color);
+    
+    @include tablet{
+      padding: 12px 20px;
+      font-size: 14px;
+    }
 
     & svg{
       stroke: #292D32;
@@ -209,5 +235,5 @@ a {
 }
 
 .section {
-  margin: clamp(30px, 6vw, 100px) 0;
+  margin: clamp(60px, 10vw, 120px) 0;
 }

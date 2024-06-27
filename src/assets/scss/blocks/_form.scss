@@ -6,14 +6,66 @@
             @include bg-cover;
             padding: 0 50px;
             grid-template-columns: minmax(350px, 507px) minmax(350px, 1fr);
+
+            @include medium-desktop {
+                grid-template-columns: minmax(350px, 407px) minmax(350px, 1fr);
+            }
+            
+            @include for-desktop{
+                grid-template-columns: minmax(270px, 407px) minmax(350px, 1fr);
+                padding: 0px 30px;
+            }
+
+            @include tablet{
+                grid-template-columns: 1fr;
+                position: relative;
+            }
+
+            @include mobile{
+                padding: 0 15px;
+            }
+
+            & .img-wrap {
+                display: flex;
+                align-items: flex-end;
+
+                @include tablet{
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 20%;
+                    z-index: 0;
+
+                    & img{
+                        max-height: 100%;
+                        max-width: 100%;
+                        object-fit: contain;
+                        opacity: 0.4;
+                        filter: blur(4px);
+                    }
+                }
+            }
         }
 
         & .flex-column {
             margin-top: 80px;
+            margin-bottom: 80px;
+
+            @include tablet{
+                align-items: flex-start;
+                width: 100%;
+                margin: 40px 0;
+            }
 
             & .project_title {
                 color: white;
                 margin-bottom: 65px;
+
+                @include medium-desktop{
+                    margin-bottom: 30px;
+                }
+
             }
 
             & form {
@@ -22,8 +74,25 @@
                 gap: 32px;
                 max-width: 660px;
 
+                @include medium-desktop{
+                    gap: 20px;
+                }
+
+                @include tablet{
+                    max-width: none;
+                    width: 100%;
+                }
+
                 & .flex-row {
                     gap: 20px;
+
+                    @include medium-desktop{
+                        gap: 15px;
+                    }
+
+                    @include mobile{
+                        flex-direction: column;
+                    }
 
                     & span {
                         display: block;
@@ -33,7 +102,7 @@
                     & select {
                         font-family: var(--second-family);
                         font-weight: 400;
-                        font-size: 16px;
+                        font-size: clamp(14px, 1.5vw, 16px);
                         line-height: 130%;
                         color: rgba(255, 255, 255, 0.8);
                         display: block;
@@ -60,6 +129,10 @@
                         & option {
                             color: black;
                             font-size: 18px;
+
+                            @include mobile{
+                                font-size: 14px;
+                            }
                         }
                     }
 
@@ -73,7 +146,7 @@
                         background: rgba(255, 255, 255, 0.4);
                         font-family: var(--second-family);
                         font-weight: 400;
-                        font-size: 16px;
+                        font-size: clamp(14px, 1.5vw, 16px);
                         line-height: 130%;
                         color: rgb(255, 255, 255);
                         padding: 17.5px 16px;
@@ -81,7 +154,7 @@
                         &::placeholder {
                             font-family: var(--second-family);
                             font-weight: 400;
-                            font-size: 16px;
+                            font-size: clamp(14px, 1.5vw, 16px);
                             line-height: 130%;
                             color: rgba(255, 255, 255, 0.8);
                         }
@@ -108,14 +181,14 @@
                     padding: 16px;
                     font-family: var(--third-family);
                     font-weight: 500;
-                    font-size: 15px;
+                    font-size: clamp(13px, 1.5vw, 15px);
                     line-height: 160%;
                     color: rgba(255, 255, 255, 0.8);
 
                     &::placeholder {
                         font-family: var(--third-family);
                         font-weight: 500;
-                        font-size: 15px;
+                        font-size: clamp(13px, 1.5vw, 15px);
                         line-height: 160%;
                         color: rgba(255, 255, 255, 0.8);
                     }
@@ -131,7 +204,7 @@
                     z-index: 0;
                     background-color: white;
                     border-radius: 70px;
-                    
+
 
                     &::after {
                         display: block;

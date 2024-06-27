@@ -2,20 +2,42 @@
     & .flex-row {
         justify-content: space-between;
         margin-bottom: 50px;
+        gap: 20px;
+
+        @include for-desktop{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @include small-tablet{
+            margin-bottom: 30px;
+        }
     }
 
     & .project_title {
         max-width: 751px;
+
+        @include for-desktop{
+            max-width: none;
+        }
     }
 
     & .project_desc_grey {
         max-width: 557px;
         font-size: 18px;
+
+        @include for-desktop{
+            max-width: none;
+        }
     }
 }
 
 .swiper_scientists {
     padding-bottom: 90px;
+
+    @include small-tablet{
+        padding-bottom: 70px;
+    }
 
     & .swiper-wrapper {
         align-items: stretch;
@@ -48,12 +70,21 @@
             @include bg-cover;
             width: 24px;
             height: 24px;
+
+            @include small-tablet{
+                width: 18px;
+                height: 18px;
+            }
         }
     }
 
     & .swiper-button-prev{
         right: 110px;
         left: unset;
+
+        @include small-tablet{
+            right: 90px;
+        }
 
         &:hover{
             background: #0a0d50;
@@ -90,6 +121,10 @@
         width: auto;
         transition: all 0.3s linear;
         
+        @include small-tablet{
+            padding: 10px 20px;
+        }
+
         &:after{
             transition: all 0.3s linear;
         }

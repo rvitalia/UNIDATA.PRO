@@ -1,19 +1,30 @@
 .blockquote {
+    
     & .blockquote_inner_text {
         font-weight: 600;
-        font-size: 36px;
+        font-size: clamp(24px, 3.3vw, 36px);
         line-height: 160%;
         letter-spacing: -0.03em;
         color: #010205;
         display: block;
         margin-bottom: 70px;
+
+        @include small-tablet{
+            margin-bottom: 40px;
+        }
     }
 
     & .swiper-blockquote {
         padding-bottom: 0;
 
+        @include tablet{
+            padding-bottom: 60px;
+        }
+
         & .swiper-slide {
             padding: 0;
+            overflow: visible;
+            border-radius: 0;
         }
 
         & .grid-row {
@@ -36,7 +47,7 @@
         & .blockquote_inner_name {
             font-family: var(--font4);
             font-weight: 500;
-            font-size: 24px;
+            font-size: clamp(20px, 4vw, 24px);
             line-height: 133%;
             letter-spacing: -0.02em;
             color: #222324;
@@ -62,10 +73,19 @@
             left: unset;
             right: 0;
             bottom: 15px;
+
+            @include tablet{
+             margin-right: 100px;
+             bottom: 8px;
+            }
         }
 
         & .swiper-button-prev {
-            right: 211px;
+             right: 211px;
+
+            @include tablet{
+                right: 185px;
+            }
         }
     }
 }

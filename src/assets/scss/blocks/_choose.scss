@@ -3,6 +3,16 @@
         &:first-of-type {
             justify-content: space-between;
             margin-bottom: 50px;
+
+            @include tablet{
+                margin-bottom: 30px;
+            }
+
+            @include tablet{
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
         }
 
         & .project_desc_grey {
@@ -11,6 +21,12 @@
 
         &:last-of-type {
             justify-content: space-between;
+            gap: 20px;
+
+            @include tablet{
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
 
         & .flex-column {
@@ -38,7 +54,7 @@
                 & dt,
                 & span {
                     font-weight: 700;
-                    font-size: 84px;
+                    font-size: clamp(50px, 8vw ,84px);
                     line-height: 150%;
                     letter-spacing: -0.03em;
                     color: #fff;
@@ -55,9 +71,14 @@
                 &+.flex-row {
                     align-items: center;
                     gap: 7px;
+
+                    @include tablet{
+                        flex-direction: row;
+                    }
+
                     & span {
                         font-weight: 700;
-                        font-size: 74px;
+                        font-size: clamp(45px, 8vw, 74px);
                         line-height: 1;
                         letter-spacing: -0.03em;
                         color: #fff;
@@ -87,8 +108,25 @@
         align-items: center;
         gap: 20px;
 
+        @include small-tablet{
+            gap: 10px;
+            grid-template-columns: 48px 1fr;
+        }
+
+        & span{
+            font-size: 14px;
+        }
+
         & .img-wrap {
             grid-row: 2 span;
+
+            @include small-tablet{
+
+                & svg{
+                    width: 48px;
+                    height: 48px;
+                }
+            }
         }
     }
 }
