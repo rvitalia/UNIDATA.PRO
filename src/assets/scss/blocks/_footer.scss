@@ -10,10 +10,22 @@
         width: 100%;
         gap: 100px;
 
+        @include medium-desktop{
+            gap: 30px;
+        }
+
+        @include tablet{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
         &>.flex-column {
             gap: 30px;
             width: 100%;
             max-width: 344px;
+            @include tablet{
+                gap: 20px;
+            }
 
             & .header_inner_logo {
                 & img {
@@ -25,6 +37,10 @@
 
             & .footer_data {
                 margin-bottom: 30px;
+
+                @include tablet{
+                    margin-bottom: 0;
+                }
 
                 & span {
                     &:first-of-type {
@@ -76,11 +92,23 @@
 
     & .grid-row {
         width: 100%;
-        grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
         gap: 30px;
+        
+        @include for-desktop{
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        }
+        
+        @include small-tablet{
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
 
         & .footer_menu {
             gap: 30px;
+
+            @include tablet{
+                gap: 20px;
+            }
 
             & .footer-title, & .footer-title>a {
                 margin-bottom: 15px;
@@ -89,6 +117,10 @@
                 font-size: 18px;
                 letter-spacing: -0.01em;
                 color: #192031;
+            
+                @include tablet{
+                    margin-bottom: 0;
+                }
             }
 
             & li,
