@@ -558,6 +558,20 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            breakpoints: {
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 18
+                },
+                650: {
+                    slidesPerView: 2,
+                    spaceBetween: 18
+                },
+                1050: {
+                    slidesPerView: 3,
+                    spaceBetween: 18
+                }
+            }
         });
         const swiperBlockquote = new Swiper('.swiper-blockquote', {
             slidesPerView: 1,
