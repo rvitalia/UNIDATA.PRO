@@ -68,10 +68,45 @@
         </header>
         <main class="main">
             
-            <object type="image/svg+xml" data="./assets/images/sprite.svg" style="display: none;"></object>
+            <!-- <object type="image/svg+xml" data="./assets/images/sprite.svg" style="display: none;"></object> -->
+            <style>
+                @media (max-width: 992px) {
+                    .dhero .dhero_item .dhero_item_adv {
+                        background-image: url('./assets/images/hero/Group427320836.png');
+                    }
+                }
+            </style>
+            <section class="section dhero">
+                <div class="container">
+                    <div class="grid-row">
+                        <div class="dhero_item">
+                            <h1 class="project_main_title">Marketplace of datasets</h1>
+                            <span class="project_desc_grey">
+                                For 6 years of working with data, we have accumulated high-quality datasets that are used in
+                                research and AI business
+                            </span>
+                            <a href="" class="project-modal width-over">
+                                Ger started
+                                <svg class="icon" width="24" height="24">
+                                    <use xlink:href="./assets/images/sprite.svg#svg--arrow-right"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="dhero_item">
+                            <div class="img-wrap">
+                                <img src="./assets/images/svg/3d-illustration.svg" alt="" width="631" height="631">
+                            </div>
+                            <div class="dhero_item_adv">
+                                <span class="dhero_item_adv_top">Advantages</span>
+                                <span class="dhero_item_adv_bottom">SLA over projects <br> 24/7*</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             
             
-            <section class="datamarket section" style="margin-top: 200px;">
+            <section class="datamarket section">
                 <div class="container">
                     <div class="datamarket_inner">
                         <aside>
@@ -350,7 +385,23 @@
                                     <svg class="svg-container">
                                         <use xlink:href="./assets/images/sprite.svg#datamarket--FilterOutlined"></use>
                                     </svg>
+                                    Filters
                                 </button>
+                                <div class="search-wrap">
+                                    <form action="">
+                                        <button type="submit" class="datamarket_inner_search btn-reset">
+                                            <svg class="svg-container" width="24" height="24">
+                                                <use xlink:href="./assets/images/sprite.svg#svg--SearchOutlined"></use>
+                                            </svg>
+                                        </button>
+                                        <input type="text" class="datamarket_inner_input" name="" id="" placeholder="Search items">
+                                    </form>
+                                </div>
+                                <form action="">
+                                    <select class="datamarket_inner_select" name="" id="">
+                                        <option value="Default sorting" disabled selected>Default sorting</option>
+                                    </select>
+                                </form>
                             </div>
                             <ul class="grid-row list-reset datamarket_posts">
                                 <li>
@@ -406,6 +457,45 @@
                                         1 selfie and 1 video of each person
                                     </p>
                                 </li>
+                                <li>
+                                    <div class="img-wrap">
+                                        <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                                        <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                                        <span class="datamarket_info">Licensed</span>
+                                    </div>
+                                    <h3 class="datamarket_posts_title">ANTI-SPOOFING REAL VIDEO DATASET</h3>
+                                    <p>
+                                        98,000+ files <br>
+                                        50,000+ people <br>
+                                        1 selfie and 1 video of each person
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="img-wrap">
+                                        <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                                        <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                                        <span class="datamarket_info">Licensed</span>
+                                    </div>
+                                    <h3 class="datamarket_posts_title">ANTI-SPOOFING REAL VIDEO DATASET</h3>
+                                    <p>
+                                        98,000+ files <br>
+                                        50,000+ people <br>
+                                        1 selfie and 1 video of each person
+                                    </p>
+                                </li>
+                                <li>
+                                    <div class="img-wrap">
+                                        <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                                        <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                                        <span class="datamarket_info">Licensed</span>
+                                    </div>
+                                    <h3 class="datamarket_posts_title">ANTI-SPOOFING REAL VIDEO DATASET</h3>
+                                    <p>
+                                        98,000+ files <br>
+                                        50,000+ people <br>
+                                        1 selfie and 1 video of each person
+                                    </p>
+                                </li>
                             </ul>
                         </article>
                     </div>
@@ -414,29 +504,95 @@
             
             
             <script>
-                function toggleSidebar(){
+                function toggleSidebar() {
                     const sidebar = document.querySelector('aside');
-                    console.log(sidebar.offsetWidth);
                     sidebar.classList.toggle('hide');
             
-                    if(sidebar.classList.contains('hide')){
-                        sidebar.style.marginLeft = `-${sidebar.offsetWidth}px`;
-                    }else{
-                        sidebar.style.marginLeft = 0;
-                    }   
+                    if (window.innerWidth > 768) {
+                        if (sidebar.classList.contains('hide')) {
+                            sidebar.style.marginLeft = `-${sidebar.offsetWidth}px`;
+                        } else {
+                            sidebar.style.marginLeft = 0;
+                        }
+                    } else {
+            
+                    }
+            
                 }
             
-                function showFilter(element){
+                function showFilter(element) {
                     element.classList.toggle('hide');
                     let list = element.previousElementSibling;
                     list.classList.toggle('hide');
-                    if(list.classList.contains('hide')){
+                    if (list.classList.contains('hide')) {
                         list.style.marginTop = `-${list.offsetWidth}px`;
-                    }else{
+                    } else {
                         list.style.marginTop = `0px`;
                     }
                 }
+            
+                document.addEventListener('DOMContentLoaded', () => {
+                        toggleSidebar();
+                })
             </script>
+            <section class="section quality">
+                <div class="container">
+                    <div class="quality_item" style="background-image: url(./assets/images/quality/Group1171274777.png);">
+                        <div class="quality_item_info">
+                            <dl class="h-reset">
+                                <dt>79%</dt>
+                                <dd class="h-reset project_desc_grey">Extra growth for your company.</dd>
+                            </dl>
+                            <svg class="icon" width="24" height="26">
+                                <use xlink:href="./assets/images/sprite.svg#svg--Blue-arrow-top"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="quality_item">
+                        <h2 class="project_title">
+                            A high-quality dataset is 90% of the success of the correct operation of a neural network
+                        </h2>
+                        <span class="project_desc_grey">
+                            At UniData, we provide ready-made datasets with in-depth metadata and expertise from leading data
+                            Scientologists
+                        </span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section choosen">
+                <div class="container">
+                    <div class="choosen_inner" style="background-image: url(./assets/images/choosen/Group1171274778.png);">
+                        <h2 class="project_title">Our datasets are chosen to:</h2>
+                        <div class="grid-row">
+                            <div class="choosen_inner_item --accent">
+                                <dl class="h-reset">
+                                    <dt>01</dt>
+                                    <dd class="h-reset">Win iBeta Level 1 and Level 2 certificates</dd>
+                                </dl>
+                            </div>
+                            <div class="choosen_inner_item">
+                                <dl class="h-reset">
+                                    <dt>02</dt>
+                                    <dd class="h-reset project_desc_grey">To train neural networks on rare corner cases</dd>
+                                </dl>
+                            </div>
+                            <div class="choosen_inner_item">
+                                <dl class="h-reset">
+                                    <dt>03</dt>
+                                    <dd class="h-reset project_desc_grey">Increase the quality of the models from 95%</dd>
+                                </dl>
+                            </div>
+                            <div class="choosen_inner_item">
+                                <dl class="h-reset">
+                                    <dt>04</dt>
+                                    <dd class="h-reset project_desc_grey">Create a database for internal development</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer class="footer">
             <div class="container">
@@ -514,43 +670,7 @@
         </footer>        <div class="overlay"></div>
     </div>
     <!-- <script src="assets/js/app.js"></script> -->
-    <script>
-        const swiper = new Swiper('.swiper-services', {
-            slidesPerView: 3,
-            spaceBetween: 18,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                200: {
-                    slidesPerView: 1,
-                    spaceBetween: 18
-                },
-                650: {
-                    slidesPerView: 2,
-                    spaceBetween: 18
-                },
-                1050: {
-                    slidesPerView: 3,
-                    spaceBetween: 18
-                }
-            }
-        });
-        const swiperBlockquote = new Swiper('.swiper-blockquote', {
-            slidesPerView: 1,
-            spaceBetween: 15,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction',
-                formatFractionCurrent: (number) => `0${number}`, // Формат текущего слайда с ведущим нулем
-                formatFractionTotal: (number) => `0${number}`, // Формат общего количества слайдов с ведущим нулем
-            },
-        });
+    <script>  
         document.addEventListener('DOMContentLoaded', () => {
             const burgerMenu = document.querySelector('.burger-menu');
             burgerMenu.addEventListener('click', () => {

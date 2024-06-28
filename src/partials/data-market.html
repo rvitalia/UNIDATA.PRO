@@ -1,4 +1,4 @@
-<section class="datamarket section" style="margin-top: 200px;">
+<section class="datamarket section">
     <div class="container">
         <div class="datamarket_inner">
             <aside>
@@ -277,7 +277,23 @@
                         <svg class="svg-container">
                             <use xlink:href="./assets/images/sprite.svg#datamarket--FilterOutlined"></use>
                         </svg>
+                        Filters
                     </button>
+                    <div class="search-wrap">
+                        <form action="">
+                            <button type="submit" class="datamarket_inner_search btn-reset">
+                                <svg class="svg-container" width="24" height="24">
+                                    <use xlink:href="./assets/images/sprite.svg#svg--SearchOutlined"></use>
+                                </svg>
+                            </button>
+                            <input type="text" class="datamarket_inner_input" name="" id="" placeholder="Search items">
+                        </form>
+                    </div>
+                    <form action="">
+                        <select class="datamarket_inner_select" name="" id="">
+                            <option value="Default sorting" disabled selected>Default sorting</option>
+                        </select>
+                    </form>
                 </div>
                 <ul class="grid-row list-reset datamarket_posts">
                     <li>
@@ -333,6 +349,45 @@
                             1 selfie and 1 video of each person
                         </p>
                     </li>
+                    <li>
+                        <div class="img-wrap">
+                            <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                            <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                            <span class="datamarket_info">Licensed</span>
+                        </div>
+                        <h3 class="datamarket_posts_title">ANTI-SPOOFING REAL VIDEO DATASET</h3>
+                        <p>
+                            98,000+ files <br>
+                            50,000+ people <br>
+                            1 selfie and 1 video of each person
+                        </p>
+                    </li>
+                    <li>
+                        <div class="img-wrap">
+                            <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                            <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                            <span class="datamarket_info">Licensed</span>
+                        </div>
+                        <h3 class="datamarket_posts_title">ANTI-SPOOFING REAL VIDEO DATASET</h3>
+                        <p>
+                            98,000+ files <br>
+                            50,000+ people <br>
+                            1 selfie and 1 video of each person
+                        </p>
+                    </li>
+                    <li>
+                        <div class="img-wrap">
+                            <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                            <img src="./assets/images/datamarket/IMG.png" alt="" width="256" height="182">
+                            <span class="datamarket_info">Licensed</span>
+                        </div>
+                        <h3 class="datamarket_posts_title">ANTI-SPOOFING REAL VIDEO DATASET</h3>
+                        <p>
+                            98,000+ files <br>
+                            50,000+ people <br>
+                            1 selfie and 1 video of each person
+                        </p>
+                    </li>
                 </ul>
             </article>
         </div>
@@ -341,26 +396,34 @@
 
 
 <script>
-    function toggleSidebar(){
+    function toggleSidebar() {
         const sidebar = document.querySelector('aside');
-        console.log(sidebar.offsetWidth);
         sidebar.classList.toggle('hide');
 
-        if(sidebar.classList.contains('hide')){
-            sidebar.style.marginLeft = `-${sidebar.offsetWidth}px`;
-        }else{
-            sidebar.style.marginLeft = 0;
-        }   
+        if (window.innerWidth > 768) {
+            if (sidebar.classList.contains('hide')) {
+                sidebar.style.marginLeft = `-${sidebar.offsetWidth}px`;
+            } else {
+                sidebar.style.marginLeft = 0;
+            }
+        } else {
+
+        }
+
     }
 
-    function showFilter(element){
+    function showFilter(element) {
         element.classList.toggle('hide');
         let list = element.previousElementSibling;
         list.classList.toggle('hide');
-        if(list.classList.contains('hide')){
+        if (list.classList.contains('hide')) {
             list.style.marginTop = `-${list.offsetWidth}px`;
-        }else{
+        } else {
             list.style.marginTop = `0px`;
         }
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+            toggleSidebar();
+    })
 </script>

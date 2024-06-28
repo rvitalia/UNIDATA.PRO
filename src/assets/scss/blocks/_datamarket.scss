@@ -1,6 +1,55 @@
+.datamarket {
+    backdrop-filter: blur(64px);
+    background: url("path_to_image");
+    margin-top: -30px;
+    padding-top: 40px;
+
+    @include tablet {
+        margin-top: 30px;
+    }
+
+    & .search-wrap {
+        flex-grow: 1;
+
+        & form {
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            padding: 0px 12px;
+            background: #fff;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+
+            & .datamarket_inner_input {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 157%;
+                color: rgba(0, 0, 0, 1);
+                border: none;
+
+                &:placeholder {
+                    color: rgba(0, 0, 0, 0.25);
+                }
+
+                &:active,
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
 .datamarket_inner {
     display: flex;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+
+    @include small-tablet {
+        position: relative;
+    }
 
 
     & aside {
@@ -12,6 +61,14 @@
         width: auto;
         visibility: visible;
         opacity: 1;
+
+        @include small-tablet {
+            position: absolute;
+            top: 95px;
+            left: 0;
+            z-index: 1;
+            background-color: #fff;
+        }
 
         & .datamarket_filter_title {
             margin: 0;
@@ -111,7 +168,9 @@
         border-left: 1px solid rgba(0, 0, 0, 0.06);
         border-right: 1px solid rgba(0, 0, 0, 0.06);
 
-
+        @include small-tablet{
+            padding: 0;
+        }
 
         & * {
             transition: all 0.3s linear;
@@ -120,9 +179,16 @@
         &>.flex-row {
             margin-bottom: 24px;
             // padding: 12px;
+            gap: 16px;
+
+            @include mobile{
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
 
             &>button {
-                width: 48px;
+                // width: ;
+                padding: 0px 10px;
                 height: 48px;
                 border: 1px solid rgba(0, 0, 0, 0.15);
                 border-radius: 6px;
@@ -131,10 +197,48 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                gap: 16px;
 
                 & svg {
                     width: 24px;
                     height: 24px;
+                }
+            }
+
+            .search-wrap{
+                @include mobile{
+                    order: 3;
+                }
+            }
+
+            & .datamarket_inner_select {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 183%;
+                color: rgba(0, 0, 0, 0.88);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 6px;
+                padding: 13px 20px;
+                padding-right: 48px;
+                background-color: #fff;
+                appearance: none; // Убираем стандартный стиль стрелки
+                -webkit-appearance: none; // Для Safari
+                -moz-appearance: none; // Для Firefox
+                background-image: url('data:image/svg+xml,%3Csvg%20width=%2220%22%20height=%2216%22%20viewBox=%220%200%2020%2016%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%20%20%3Cpath%20d=%22M17.2659%204H15.801C15.7014%204%2015.6077%204.03906%2015.5491%204.10313L10.0002%2010.2219L4.45142%204.10313C4.39283%204.03906%204.29908%204%204.19947%204H2.73462C2.60767%204%202.53345%204.11563%202.60767%204.19844L9.49439%2011.7937C9.74439%2012.0687%2010.2561%2012.0687%2010.5042%2011.7937L17.3909%204.19844C17.467%204.11563%2017.3928%204%2017.2659%204Z%22%20fill=%22black%22%20fill-opacity=%220.88%22%20/%3E%20%3C/svg%3E');
+                background-repeat: no-repeat;
+                background-position: calc(100% - 17px) center; // Отступ справа 17px, центрирование по высоте
+
+
+                & option {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 183%;
+                }
+
+
+                &:active,
+                &:focus {
+                    outline: none;
                 }
             }
         }
