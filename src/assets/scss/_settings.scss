@@ -112,25 +112,17 @@ a {
 .project_title_h4 {
   margin: 0;
   font-weight: 700;
-  font-size: 24px;
+  font-size: clamp(20px, 4vw, 24px);
   line-height: 140%;
   letter-spacing: -0.03em;
-
-  @include small-tablet{
-    font-size: 20px;
-  }
 }
 
 .project_title_h3 {
   margin: 0;
   font-weight: 600;
-  font-size: 36px;
+  font-size: clamp(26px, 4vw , 36px);
   line-height: 140%;
   color: #fff;
-
-  @include small-tablet{
-    font-size: 30px;
-  }
 }
 
 .project_text_regular {
@@ -236,4 +228,7 @@ a {
 
 .section {
   margin: clamp(60px, 10vw, 120px) 0;
+}
+.tc{
+  text-align: center;
 }
