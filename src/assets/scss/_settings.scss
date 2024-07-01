@@ -228,6 +228,11 @@ a {
 
 .section {
   margin: clamp(60px, 10vw, 120px) 0;
+  
+  &.blockquote{
+    margin: 0;
+    padding: clamp(60px, 10vw, 120px) 0;
+  }
 }
 .tc{
   text-align: center;
