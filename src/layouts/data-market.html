@@ -18,12 +18,17 @@
         <div class="overlay"></div>
     </div>
     <!-- <script src="assets/js/app.js"></script> -->
-    <script>  
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const burgerMenu = document.querySelector('.burger-menu');
-            burgerMenu.addEventListener('click', () => {
-                burgerMenu.classList.toggle('open');
-            });
+            const mobileMenu = document.querySelector('.mobile_menu');
+            if (burgerMenu && mobileMenu) {
+                burgerMenu.addEventListener('click', () => {
+                    burgerMenu.classList.toggle('open');
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+
         });
 
     </script>

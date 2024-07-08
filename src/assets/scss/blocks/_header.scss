@@ -8,7 +8,7 @@ header {
     width: 100%;
     gap: 74px;
 
-    @include small-tablet{
+    @include small-tablet {
         gap: 20px;
     }
 }
@@ -30,8 +30,8 @@ header {
         border-radius: 12px;
         width: 100%;
 
-        @include for-desktop{
-            & nav{
+        @include for-desktop {
+            & nav {
                 display: none;
             }
         }
@@ -96,7 +96,7 @@ header {
     justify-content: space-around;
     align-items: center;
     padding: 0;
-    z-index: 1;
+    z-index: 10;
     flex-shrink: 0;
 
     @include for-desktop {
@@ -136,5 +136,63 @@ header {
 
     &.open span:nth-child(3) {
         transform: rotate(-45deg) translateY(-14px);
+    }
+}
+
+.mobile_menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding-top: 10vw;
+
+
+    transform-origin: 0 0;
+    transform: rotateY(-90deg) rotateX(-90deg);
+    visibility: hidden;
+    transition: all 0.3s linear;
+
+
+
+
+    & .header_inner_logo {
+        margin-bottom: 5vw;
+
+        & img {
+            max-height: 50px;
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    & .header_inner_button{
+        margin-left: unset;
+        margin-top: 5vw;
+    }
+
+    &.active {
+        visibility: visible;
+        transform: rotate(0);
+    }
+}
+
+.mobile_header_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+
+    & a {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 18px;
+        color: #020407;
     }
 }

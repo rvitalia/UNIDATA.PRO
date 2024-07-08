@@ -61,7 +61,18 @@
                 <span></span>
                 <span></span>
               </button>
-              
+              <div class="mobile_menu">
+                <a href="" class="header_inner_logo">
+                  <img src="./assets/images/header/Group.svg" alt="">
+                  <span>UNIDATA</span>
+                </a>
+                <ul class="mobile_header_menu list-reset">
+                  <li><a href="">Services</a></li>
+                  <li><a href="">Datasets</a></li>
+                  <li><a href="">Industries</a></li>
+                </ul>
+                <a class="header_inner_button project-modal --white width-over" href="">Get started</a>
+              </div>
         
             </div>
           </div>
@@ -684,7 +695,7 @@
                       <div class="choose_item">
                         <div class="img-wrap">
                           <svg class="icon" width="64" height="64">
-                            <use xlink:href="./assets/images/sprite.svg#svg--Arm_wrestling,_competition,_handshake"></use>
+                            <use xlink:href="./assets/images/sprite.svg#svg--Arm_wrestling,_competition,_handshake2"></use>
                           </svg>
                         </div>
                         <h4 class="project_title_h4">Support</h4>
@@ -814,12 +825,17 @@
         </footer>        <div class="overlay"></div>
     </div>
     <!-- <script src="assets/js/app.js"></script> -->
-    <script>  
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const burgerMenu = document.querySelector('.burger-menu');
-            burgerMenu.addEventListener('click', () => {
-                burgerMenu.classList.toggle('open');
-            });
+            const mobileMenu = document.querySelector('.mobile_menu');
+            if (burgerMenu && mobileMenu) {
+                burgerMenu.addEventListener('click', () => {
+                    burgerMenu.classList.toggle('open');
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+
         });
 
     </script>
