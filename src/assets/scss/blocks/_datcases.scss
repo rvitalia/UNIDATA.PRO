@@ -9,7 +9,7 @@
             border-bottom: 1px solid rgba(10, 13, 80, 0.6);
             flex-wrap: wrap;
 
-            @include tablet{
+            @include tablet {
                 padding-bottom: 25px;
             }
 
@@ -29,30 +29,32 @@
                 flex-wrap: wrap;
             }
 
-            @media (max-width:1200px){
+            @media (max-width:1200px) {
                 padding: 30px 0;
                 gap: 30px;
             }
 
-            @include tablet{
+            @include tablet {
                 gap: 20px;
             }
-            
-            
+
+
             & dl {
                 display: flex;
                 align-items: center;
                 gap: 40px;
-                
+
                 @media (max-width:1500px) {
                     flex: 1 0 calc(50% - 50px);
                     justify-content: center;
                 }
+
                 @media (max-width:1200px) {
                     flex: 1 0 100%;
                     justify-content: flex-start;
                 }
-                @include tablet{
+
+                @include tablet {
                     gap: 20px;
                 }
 
@@ -79,10 +81,10 @@
                 & dt {
                     flex-shrink: 0;
 
-                    & img{
-                        @include tablet{
+                    & img {
+                        @include tablet {
                             max-width: 40px !important;
-                        } 
+                        }
                     }
                 }
 
@@ -98,7 +100,7 @@
                 line-height: 150%;
                 color: rgba(10, 13, 80, 0.9);
 
-                @include tablet{
+                @include tablet {
                     font-size: 16px;
                 }
             }
@@ -126,8 +128,8 @@
 
             & .img-wrap {
                 // border-radius: 15px;
-                
-                & img{
+
+                & img {
                     border-radius: 15px;
                     border: 0.95px solid #0a0d50;
                 }
@@ -169,4 +171,31 @@
         margin-right: auto;
         margin-top: 20px;
     }
+}
+
+.datcases_images {
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.datacase_item {
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+    background: #fff;
+
+    & .img-wrap img {
+        max-width: 510px;
+        max-height: 300px;
+        width: 100%;
+    }
+}
+
+.datacase_item_desc {
+    display: block;
+    font-family: var(--third-family);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 117%;
+    color: #0a0d50;
+    padding: 32px;
 }

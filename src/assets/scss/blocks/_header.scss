@@ -43,11 +43,11 @@ header {
     align-items: center;
     gap: 33px;
 
-    & li {
+    &>li {
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        transition: all 0.3 s linear;
+        transition: all 0.3s linear;
 
         &.menu-item-has-children {
             &::after {
