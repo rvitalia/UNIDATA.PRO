@@ -1,0 +1,207 @@
+.page {
+    overflow: unset;
+}
+
+.content {
+    &.section {
+        margin-top: 60px;
+    }
+
+    & .container {
+        display: grid;
+        gap: 25px;
+        grid-template-columns: 250px 1fr 282px;
+        
+        @include for-desktop{
+            grid-template-columns: 250px 1fr;
+        }
+
+        @include small-tablet{
+            position: relative;
+        }
+    }
+    & .content_left{
+        @include small-tablet{
+            position: absolute;
+            background-color: white;
+            max-width: 250px;
+            padding: 30px;
+            padding-left: 0;
+            left: -100vw;
+        }
+    }
+    
+    & .content_left_mobile{
+        display: none;
+
+        @include small-tablet{
+            display: block;
+            position: fixed;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            cursor: pointer;
+            top: 50%;
+            left: 0;
+            background-color: white;
+            backdrop-filter: blur(10px);
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 140%;
+            color: #111b4f;
+            padding: 15px;
+            padding-left: 5px;
+            border-radius: 0 35px 35px 0 ;
+            border: 1px solid rgba(17, 27, 79, 0.3); 
+            // margin: 0;
+            // transform-origin: left top;
+            transform: translateY(-50%);
+        }
+    }
+    
+
+    & .content_right {
+
+        @include for-desktop{
+            display: none;
+        }
+
+        & .content_right_wrapper {
+            padding: 32px;
+            padding-bottom: 36px;
+            border-radius: 10px;
+            @include bg-cover;
+            position: sticky;
+            top: 70px;
+        }
+
+        & .project_title_h4 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        & .project-modal {
+            background-color: transparent;
+            border-color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+    }
+
+ 
+    & .content_left_wrapper{
+        position: sticky;
+        top: 70px;
+    }
+
+    & .content_left_wrapper_menu {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        & .project_title_h4 {
+            margin-bottom: 24px;
+        }
+
+
+        & a {
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: 0.05em;
+            color: rgba(10, 13, 80, 0.6);
+            transition: all 0.3s linear;
+        }
+
+        & li {
+            transition: all 0.3s linear;
+
+            &::marker {
+                font-size: 25px;
+            }
+        }
+
+        & li.active a {
+            color: #0a0d50;
+        }
+    }
+
+    & .content_inner {
+
+        @include small-tablet{
+            grid-column: 2 span;
+        }
+        & p {
+            font-weight: 500;
+            font-size: clamp(12px, 3vw, 16px);
+            line-height: 180%;
+            color: #878c91;
+
+            @include tablet {
+                font-size: 14px;
+            }
+        }
+        & img{
+            border-radius: 16px;
+        }
+
+        & blockquote {
+            border: 1px solid #0a0d50;
+            border-radius: 16px;
+            background-color: #fff;
+            padding: 25px;
+            line-height: 1.5;
+            margin-left: 0;
+            margin-right: 0;
+            font-size: clamp(12px, 3vw, 16px);
+        }
+
+        & ul,
+        & ol {
+            font-weight: 500;
+            font-size: clamp(14px, 3vw ,18px);
+            line-height: 178%;
+            color: #192031;
+            margin-top: 25px;
+            margin-bottom: 25px;
+
+
+            & li:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+
+        & table {
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed !important;
+
+            & thead th, & tbody tr td:first-child {
+                background: #f0f0f0;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-weight: 600;
+                font-size: clamp(12px, 3vw, 14px);
+                text-align: center;
+                color: #000;
+            }
+
+
+            & th,
+            & td {
+                border: 0.5px solid rgba(0, 0, 0, 0.5);
+                padding: 5px;
+                font-size: clamp(10px, 3vw, 16px);
+
+                @include tablet{
+                    word-break: break-word;
+                }
+            }
+        }
+    }
+}

@@ -58,7 +58,7 @@ body {
 // @import 'blocks/blockquote';
 // @import 'blocks/successful';
 // @import 'blocks/choose';
-// @import 'blocks/form';
+@import 'blocks/form';
 
 // @import 'blocks/dhero';
 // @import 'blocks/datamarket';
@@ -84,8 +84,14 @@ body {
 // @import 'blocks/statistics';
 // @import 'blocks/faq';
 
-@import 'blocks/blog/intro';
-@import 'blocks/blog/blog';
+// @import 'blocks/blog/intro';
+// @import 'blocks/blog/blog';
+
+@import 'blocks/single/sinhero';
+@import 'blocks/single/content';
+@import 'blocks/single/insights';
+
+
 
 
 @import 'blocks/footer';

@@ -2,11 +2,12 @@
     & .search-wrap {
         flex-grow: 1;
 
-        @include for-desktop{
+        @include for-desktop {
             order: 10;
             flex: 1 0 100%;
         }
-        @include small-tablet{
+
+        @include small-tablet {
             flex: unset;
             order: 2;
             flex-grow: 1;
@@ -50,7 +51,7 @@
         margin-left: auto;
         padding: 14px 0;
 
-        @include for-desktop{
+        @include for-desktop {
             flex-wrap: wrap;
         }
 
@@ -67,11 +68,11 @@
             align-items: center;
             gap: 16px;
 
-            @include for-desktop{
+            @include for-desktop {
                 order: -1;
             }
 
-            @include small-tablet{
+            @include small-tablet {
                 order: unset;
             }
 
@@ -87,20 +88,20 @@
             gap: 20px;
             flex-grow: 1;
 
-            @include for-desktop{
+            @include for-desktop {
                 justify-content: flex-end;
             }
 
-            @include small-tablet{
+            @include small-tablet {
                 justify-content: center;
                 flex: 1 0 100%;
                 order: -1;
             }
 
-            @include mobile{
+            @include mobile {
                 flex-wrap: wrap;
 
-                & li:first-child{
+                & li:first-child {
                     display: none;
                 }
             }
@@ -146,10 +147,11 @@
         gap: 100px;
         transition: all 0.3s ease;
 
-        @include for-desktop{
+        @include for-desktop {
             gap: 20px;
         }
-        @include small-tablet{
+
+        @include small-tablet {
             position: relative;
         }
     }
@@ -194,7 +196,7 @@
         column-gap: 28px;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
-        & *{
+        & * {
             transition: all 0.3s linear;
         }
 
@@ -242,7 +244,7 @@
 
     }
 
-    & .project-modal{
+    & .project-modal {
         margin-left: auto;
         margin-right: auto;
         margin-top: 40px;
@@ -254,7 +256,7 @@
     transform: translateX(0);
     opacity: 1;
 
-    @include small-tablet{
+    @include small-tablet {
         position: absolute;
         top: 0;
         left: 0;
@@ -263,16 +265,20 @@
         background-color: #fff;
         z-index: 1;
     }
-  }
-  
-  .blog_bottom aside.hidden {
+}
+
+.blog_bottom aside.hidden {
     transform: translateX(-100%);
     opacity: 0;
     flex: 0 0 0;
     max-width: 0;
     margin-left: -100px;
 
-    @include for-desktop{
+    @include for-desktop {
         margin-left: -20px;
     }
-  }
+}
+
+span.project_desc_grey>p {
+    margin: 0;
+}
