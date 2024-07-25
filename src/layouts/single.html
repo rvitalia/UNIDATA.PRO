@@ -54,16 +54,47 @@
                     }
                 }
             });
-            document.addEventListener('DOMContentLoaded', function () {
-                const toggleMenu = document.getElementById('toggleMenu');
-                const contentLeftWrapper = document.querySelector('.content_left_wrapper');
 
-                toggleMenu.addEventListener('click', function () {
-                    contentLeftWrapper.classList.toggle('active');
-                });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleMenu = document.getElementById('toggleMenu');
+            const contentLeftWrapper = document.querySelector('.content_left');
+            const close = document.getElementById('close');
+
+            toggleMenu.addEventListener('click', function () {
+                contentLeftWrapper.classList.add('active');
+            });
+
+            close.addEventListener('click', function () {
+                contentLeftWrapper.classList.remove('active');
             });
 
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const contentSection = document.querySelector('.content');
+            const mobileMenu = document.querySelector('.content_left_mobile');
+            const contentLeftWrapper = document.querySelector('.content_left');
+
+
+            function checkScroll() {
+                const contentRect = contentSection.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+
+                if (contentRect.top <= viewportHeight / 2 && contentRect.bottom >= viewportHeight / 2) {
+                    mobileMenu.style.left = '0';
+                    if(contentLeftWrapper.classList.contains('active')){
+                        contentLeftWrapper.classList.remove('active');
+                    }
+                } else {
+                    mobileMenu.style.left = '100%';
+                }
+            }
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Проверяем позицию при загрузке страницы
+        });
+
     </script>
 </body>
 

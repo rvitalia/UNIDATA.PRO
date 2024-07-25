@@ -11,30 +11,59 @@
         display: grid;
         gap: 25px;
         grid-template-columns: 250px 1fr 282px;
-        
-        @include for-desktop{
+
+        @include for-desktop {
             grid-template-columns: 250px 1fr;
         }
 
-        @include small-tablet{
+        @include small-tablet {
             position: relative;
         }
     }
-    & .content_left{
-        @include small-tablet{
-            position: absolute;
+
+    & .content_left {
+        transform-origin: 0 0;
+
+        @include small-tablet {
+            position: fixed;
             background-color: white;
             max-width: 250px;
             padding: 30px;
             padding-left: 0;
-            left: -100vw;
+            left: 0;
+            transform: translateY(-50%) rotateY(-90deg);
+            transition: all 0.3s linear;
+            top: 50%;
+            
+            & .project_title_h4{
+                padding: 10px;
+            }
+            
+            &.active {
+                transform: rotateY(0) translateY(-50%);
+                border-radius: 0 20px 20px 0;
+                border: 1px solid rgba(17, 27, 79, 0.3);
+            }
+        }
+
+        & .close{
+            display: none;
+
+            @include small-tablet{
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                color: #878c91;
+                cursor: pointer;
+            }
         }
     }
-    
-    & .content_left_mobile{
+
+    & .content_left_mobile {
         display: none;
 
-        @include small-tablet{
+        @include small-tablet {
             display: block;
             position: fixed;
             writing-mode: vertical-rl;
@@ -50,18 +79,18 @@
             color: #111b4f;
             padding: 15px;
             padding-left: 5px;
-            border-radius: 0 35px 35px 0 ;
-            border: 1px solid rgba(17, 27, 79, 0.3); 
+            border-radius: 0 35px 35px 0;
+            border: 1px solid rgba(17, 27, 79, 0.3);
             // margin: 0;
             // transform-origin: left top;
             transform: translateY(-50%);
         }
     }
-    
+
 
     & .content_right {
 
-        @include for-desktop{
+        @include for-desktop {
             display: none;
         }
 
@@ -92,8 +121,8 @@
         }
     }
 
- 
-    & .content_left_wrapper{
+
+    & .content_left_wrapper {
         position: sticky;
         top: 70px;
     }
@@ -109,7 +138,6 @@
 
 
         & a {
-            font-family: var(--font-family);
             font-weight: 500;
             font-size: 16px;
             line-height: 120%;
@@ -133,20 +161,22 @@
 
     & .content_inner {
 
-        @include small-tablet{
+        @include small-tablet {
             grid-column: 2 span;
         }
+
         & p {
             font-weight: 500;
-            font-size: clamp(12px, 3vw, 16px);
+            font-size: clamp(14px, 3vw, 18px);
             line-height: 180%;
-            color: #878c91;
+            color: #192031;
 
             @include tablet {
                 font-size: 14px;
             }
         }
-        & img{
+
+        & img {
             border-radius: 16px;
         }
 
@@ -158,13 +188,14 @@
             line-height: 1.5;
             margin-left: 0;
             margin-right: 0;
-            font-size: clamp(12px, 3vw, 16px);
+            font-size: clamp(14px, 3vw, 18px);
+            color: #192031;
         }
 
         & ul,
         & ol {
             font-weight: 500;
-            font-size: clamp(14px, 3vw ,18px);
+            font-size: clamp(14px, 3vw, 18px);
             line-height: 178%;
             color: #192031;
             margin-top: 25px;
@@ -181,7 +212,8 @@
             width: 100%;
             table-layout: fixed !important;
 
-            & thead th, & tbody tr td:first-child {
+            & thead th,
+            & tbody tr td:first-child {
                 background: #f0f0f0;
                 padding-top: 10px;
                 padding-bottom: 10px;
@@ -198,7 +230,7 @@
                 padding: 5px;
                 font-size: clamp(10px, 3vw, 16px);
 
-                @include tablet{
+                @include tablet {
                     word-break: break-word;
                 }
             }

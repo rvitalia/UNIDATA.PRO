@@ -95,10 +95,10 @@
             
             <section class="content section">
                 <div class="container">
-                    <button class="btn-reset content_left_mobile">Table of content</button>
+                    <button id="toggleMenu" class="btn-reset content_left_mobile">Table of content</button>
                     <aside class="content_left">
                         <div class="content_left_wrapper">
-                            <h4 id="toggleMenu" class="project_title_h4">Table of content</h4>
+                            <h4 class="project_title_h4">Table of content</h4>
                             <ul class="content_left_wrapper_menu">
                                 <li class="active"><a href="">Comparing training, validation, and test sets</a></li>
                                 <li><a href="">Validation data </a></li>
@@ -107,6 +107,7 @@
                                 <li><a href="">Conclusion</a></li>
                             </ul>
                         </div>
+                        <span id="close" class="close">&times;</span>
                     </aside>
                     <div class="content_inner">
                         <h2>Comparing training, validation, and test sets</h2>
@@ -461,16 +462,47 @@
                     }
                 }
             });
-            document.addEventListener('DOMContentLoaded', function () {
-                const toggleMenu = document.getElementById('toggleMenu');
-                const contentLeftWrapper = document.querySelector('.content_left_wrapper');
 
-                toggleMenu.addEventListener('click', function () {
-                    contentLeftWrapper.classList.toggle('active');
-                });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleMenu = document.getElementById('toggleMenu');
+            const contentLeftWrapper = document.querySelector('.content_left');
+            const close = document.getElementById('close');
+
+            toggleMenu.addEventListener('click', function () {
+                contentLeftWrapper.classList.add('active');
+            });
+
+            close.addEventListener('click', function () {
+                contentLeftWrapper.classList.remove('active');
             });
 
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const contentSection = document.querySelector('.content');
+            const mobileMenu = document.querySelector('.content_left_mobile');
+            const contentLeftWrapper = document.querySelector('.content_left');
+
+
+            function checkScroll() {
+                const contentRect = contentSection.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+
+                if (contentRect.top <= viewportHeight / 2 && contentRect.bottom >= viewportHeight / 2) {
+                    mobileMenu.style.left = '0';
+                    if(contentLeftWrapper.classList.contains('active')){
+                        contentLeftWrapper.classList.remove('active');
+                    }
+                } else {
+                    mobileMenu.style.left = '100%';
+                }
+            }
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Проверяем позицию при загрузке страницы
+        });
+
     </script>
 </body>
 
