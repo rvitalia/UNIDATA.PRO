@@ -210,13 +210,13 @@ a {
       stroke: #292D32;
     }
 
-    &:hover{
-      transform: translateY(-4px);
+    // &:hover{
+    //   transform: translateY(-4px);
 
-      & svg{
-        transform: rotate(-45deg);
-      }
-    }
+    //   & svg{
+    //     transform: rotate(-45deg);
+    //   }
+    // }
   }
 }
 

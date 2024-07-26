@@ -3,6 +3,12 @@
 }
 
 .content {
+    &:has(.content_left.active){
+        .content_left_mobile{
+            right: -100% !important;
+        }
+    }
+ 
     &.section {
         margin-top: 60px;
     }
@@ -22,7 +28,7 @@
     }
 
     & .content_left {
-        transform-origin: 0 0;
+        transform-origin: 100% 100%;
 
         @include small-tablet {
             position: fixed;
@@ -30,18 +36,27 @@
             max-width: 250px;
             padding: 30px;
             padding-left: 0;
-            left: 0;
+            right: 0;
             transform: translateY(-50%) rotateY(-90deg);
             transition: all 0.3s linear;
             top: 50%;
+
+            @include mobile{
+                padding: 12px;
+                max-width: 200px;
+            }
             
             & .project_title_h4{
                 padding: 10px;
+
+                @include mobile{
+                    padding: 0;
+                }
             }
             
             &.active {
                 transform: rotateY(0) translateY(-50%);
-                border-radius: 0 20px 20px 0;
+                border-radius: 20px 0 0 20px ;
                 border: 1px solid rgba(17, 27, 79, 0.3);
             }
         }
@@ -66,20 +81,22 @@
         @include small-tablet {
             display: block;
             position: fixed;
-            writing-mode: vertical-rl;
+            writing-mode: vertical-lr;
             text-orientation: mixed;
             cursor: pointer;
             top: 50%;
-            left: 0;
+            right: 0;
+            // left: 0;
+            left: unset;
             background-color: white;
             backdrop-filter: blur(10px);
             font-weight: 700;
-            font-size: 22px;
+            font-size: 14px;
             line-height: 140%;
             color: #111b4f;
-            padding: 15px;
-            padding-left: 5px;
-            border-radius: 0 35px 35px 0;
+            padding: 10px;
+            // padding-right: 5px;
+            border-radius:  20px 0 0 20px;
             border: 1px solid rgba(17, 27, 79, 0.3);
             // margin: 0;
             // transform-origin: left top;
@@ -132,6 +149,12 @@
         flex-direction: column;
         gap: 14px;
 
+        @include mobile{
+            gap: 5px;
+            padding-left: 25px;
+            margin-bottom: 0;
+        }
+
         & .project_title_h4 {
             margin-bottom: 24px;
         }
@@ -144,13 +167,31 @@
             letter-spacing: 0.05em;
             color: rgba(10, 13, 80, 0.6);
             transition: all 0.3s linear;
-        }
 
+            @include mobile{
+                font-size: 10px;
+                line-height: 1.1;
+            }
+        }
+        
         & li {
             transition: all 0.3s linear;
-
+            
+            @include mobile{
+                line-height: 1;
+            }
+            
             &::marker {
+                color: rgba(10, 13, 80, 0.6);
                 font-size: 25px;
+                @include mobile{
+                    font-size: 18px;
+                }
+            }
+        }
+        & li.active {
+            &::marker{
+                color: #0a0d50;
             }
         }
 

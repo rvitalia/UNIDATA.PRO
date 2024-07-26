@@ -490,12 +490,12 @@
                 const viewportHeight = window.innerHeight;
 
                 if (contentRect.top <= viewportHeight / 2 && contentRect.bottom >= viewportHeight / 2) {
-                    mobileMenu.style.left = '0';
+                    mobileMenu.style.right = '0';
                     if(contentLeftWrapper.classList.contains('active')){
                         contentLeftWrapper.classList.remove('active');
                     }
                 } else {
-                    mobileMenu.style.left = '100%';
+                    mobileMenu.style.right = '100%';
                 }
             }
 
