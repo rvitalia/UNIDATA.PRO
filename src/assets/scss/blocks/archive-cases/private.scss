@@ -1,0 +1,107 @@
+.private {
+    & .grid-row {
+        border-radius: 30px;
+        padding: 24px 50px;
+        max-width: 1337px;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 100px;
+        align-items: center;
+
+        @include for-desktop {
+            gap: 40px;
+        }
+
+        @include tablet {
+            padding: 0;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        &+.grid-row {
+            margin-top: 70px;
+
+            @include for-desktop {
+                margin-top: 40px;
+            }
+        }
+    }
+
+    & .private_item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        & .project-modal {
+            border-radius: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 88px;
+            max-height: 56px;
+
+            @include tablet {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+
+            @include small-tablet {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+
+            @include mobile {
+                padding: unset;
+                height: 32px;
+                width: 70px;
+
+                & svg {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+
+        & p {
+            margin: 0;
+            max-width: 456px;
+            font-weight: 300;
+            font-size: clamp(14px, 2.7vw, 16px);
+            line-height: 140%;
+            letter-spacing: -0.02em;
+            color: #595856;
+        }
+
+        &>img {
+            border-radius: 20px;
+        }
+    }
+
+    & .private_item_tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 30px;
+
+        @include small-tablet {
+            margin-bottom: 10px;
+        }
+
+        & li {
+
+            & a {
+                font-family: var(--font5);
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 140%;
+                letter-spacing: -0.02em;
+                color: #0a0d50;
+                border: 1px solid #0a0d50;
+                border-radius: 99px;
+                padding: 5px 14px;
+            }
+        }
+    }
+
+}
