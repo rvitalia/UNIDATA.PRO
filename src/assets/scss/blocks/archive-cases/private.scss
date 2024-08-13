@@ -8,15 +8,19 @@
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 100px;
         align-items: center;
+        border: 1px solid #878c91;
+        background: #f0f0f0;
 
         @include for-desktop {
             gap: 40px;
         }
 
         @include tablet {
-            padding: 0;
+            padding: 20px;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
+            max-width: 500px;
+            margin-left: unset !important;
         }
 
         &+.grid-row {

@@ -162,6 +162,15 @@
                 }
             }
         }
+
+        & .successful_item{
+            border: 1px solid #878c91;
+
+            @include tablet{
+                padding: 15px !important;
+                max-width: 500px;
+            }
+        }
     }
 }
 
