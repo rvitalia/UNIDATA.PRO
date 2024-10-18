@@ -7,5 +7,4 @@ document.addEventListener('DOMContentLoaded', () => {
            mobileMenu.classList.toggle('active'); 
         });
     }
-   
 });
